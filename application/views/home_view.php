@@ -14,7 +14,7 @@
 </head>
 <body>
   
-</body>
+
 </html>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -39,7 +39,7 @@
 <class class="container">
 	<div class="row">
 		<div class="container">
-    	<div class="col-md-3">
+    	<div class="col-md-4">
         <?php echo validation_errors(); ?>
         <?php echo $this->session->flashdata('login'); ?>
         <?php echo $this->session->flashdata('regsuccess'); ?>
@@ -57,3 +57,5 @@
 		</div>
 	</div>
 </class>
+</body>
+</html>

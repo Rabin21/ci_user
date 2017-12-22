@@ -22,8 +22,7 @@ class Home extends CI_Controller{
 		$this->form_validation->set_rules('confirm_password','Confirm Password','trim|required|matches[password]' );
 
 		if ($this->form_validation->run() ===FALSE) {
-			$this->session->set_flashdata('regfailed', 'valid input is required');
-			redirect('home/');
+			$this->load->view('register_user_view');
 		}else{
 			$data = array(
 				'firstname' => $this->input->post('fname'),
@@ -67,6 +66,6 @@ class Home extends CI_Controller{
 		redirect('home/');
 	}
 	public function details_users()	{
-		
+
 	}
 }

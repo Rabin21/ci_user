@@ -34,9 +34,8 @@
   </div>
 </nav>
     <div class="container">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <?php echo validation_errors(); ?>
-        <?php echo $this->session->flashdata('regfailed') ?>
         <form class="form-signup" action="<?php echo base_url('home/signup'); ?>" method="POST">
             <h2 class="form-signup-heading">Sign Up</h2>                    
             <input type="text" name="fname" class="form-control" placeholder="Enter First Name"  autofocus><br>
