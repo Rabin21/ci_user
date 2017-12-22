@@ -24,15 +24,16 @@ class Home extends CI_Controller{
 		if ($this->form_validation->run() ===FALSE) {
 			$this->load->view('register_user_view');
 		}else{
+			$hash_pwd = password_hash($this->input->post('password'), PASSWORD_BCRYPT);
 			$data = array(
 				'firstname' => $this->input->post('fname'),
 				'lastname' => $this->input->post('lname'),
 				'username' => $this->input->post('uname'),
-				'password' => $this->input->post('password')
+				'password' => $hash_pwd
 			);
 			$this->session->set_flashdata('regsuccess', 'You are now registered! You can login now' );
 			$this->users_model->dbinsert($data);
-			$this->load->view('signup_view');
+			$this->load->view('home_view');
 		}
 	}
 	public function signin() {
@@ -54,7 +55,7 @@ class Home extends CI_Controller{
 				);
 				$this->session->set_userdata('loggedin', $sess_data);
 				$this->session->set_flashdata('login','successfully logged in');
-				$this->load->view('loggedin');
+				$this->load->view('loggedin_view');
 			}else {
 				$this->session->set_flashdata('login','invalid login');
 				$this->load->view('home_view');
