@@ -49,8 +49,6 @@
        			<input type="password" name="password" class="form-control" placeholder="Password" ><br>
        			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     		</form>
-    		<center><strong>Not Registered?</strong><br>
-    		<a href="<?php echo base_url('home/signup_view'); ?>">Sign Up</a></center>
     	</div>
     </div>
 			
